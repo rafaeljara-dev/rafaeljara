@@ -51,7 +51,7 @@ export const LandingContent = () => {
             <h2 className="text-center text-4xl text-white font-extrabold mb-10">
                 Proyectos
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
                 {testimonials.map((item) => (
                     <Card key={item.description} className="bg-[#192339] border-none text-white">
                         <div className="flex items-center justify-center m-2">

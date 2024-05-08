@@ -46,7 +46,7 @@ export const LandingNavbar = () => {
             </Link>
             <div className="flex items-center gap-x-2">
                 <NavigationMenu>
-                    <NavigationMenuList>
+                    <NavigationMenuList className="hidden md:flex">
                         <NavigationMenuItem>
                             <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
                             <NavigationMenuContent>

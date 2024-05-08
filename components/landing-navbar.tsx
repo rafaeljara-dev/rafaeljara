@@ -18,8 +18,16 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
+
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
 
 const font = Montserrat({
     weight: "600",
@@ -44,9 +52,10 @@ export const LandingNavbar = () => {
                     Rafael Jara
                 </h1>
             </Link>
-            <div className="flex items-center gap-x-2">
+            {/* Navbar Desktop */}
+            <div className="hidden md:flex items-center gap-x-2">
                 <NavigationMenu>
-                    <NavigationMenuList className="hidden md:flex">
+                    <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
                             <NavigationMenuContent>
@@ -95,7 +104,7 @@ export const LandingNavbar = () => {
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>
-            <div className="flex items-center gap-x-2">
+            <div className="hidden md:flex items-center gap-x-2">
                 <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
                     <Button variant="outline" className="rounded-full">
                         Login
@@ -107,6 +116,37 @@ export const LandingNavbar = () => {
                     </Button>
                 </Link>
             </div>
+
+            {/* Navbar Mobile */}
+            <div className="lg:hidden md:hidden flex items-center gap-x-2">
+                <Button variant="outline" className="rounded-full">
+                    <Sheet>
+                        <SheetTrigger>Menú</SheetTrigger>
+                        <SheetContent>
+                            <SheetHeader>
+                                {/* <SheetTitle>Are you absolutely sure?</SheetTitle>
+                                <SheetDescription>
+                                    This action cannot be undone. This will permanently delete your account
+                                    and remove your data from our servers.
+                                </SheetDescription> */}
+                            </SheetHeader>
+                            <div className="flex">
+                                <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+                                    <Button variant="outline" className="rounded-full">
+                                        Login
+                                    </Button>
+                                </Link>
+                                <Link href="/sign-up" className="rounded-full">
+                                    <Button>
+                                        Register
+                                    </Button>
+                                </Link>
+                            </div>
+                        </SheetContent>
+                    </Sheet>
+                </Button>
+            </div>
+
         </nav>
     )
 

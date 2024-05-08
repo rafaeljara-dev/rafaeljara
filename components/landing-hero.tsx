@@ -1,7 +1,9 @@
 "use client"
 
 import { useAuth } from "@clerk/nextjs"
+import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
+import { Button } from "@/components/ui/button";
 
 export const LandingHero = () => {
     const { isSignedIn } = useAuth();
@@ -23,6 +25,19 @@ export const LandingHero = () => {
                         }}
                     />
                 </div>
+            </div>
+            <div className="text-sm md:text-xl font-light text-zinc-400">
+                Bienvenido a mi pagina
+            </div>
+            <div>
+                <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+                    <Button variant="default" className="md:text-lg p-4 md:p-6 rounded-full font-semibold">
+                        Start Generating
+                    </Button>
+                </Link>
+            </div>
+            <div className="text-zinc-400 text-ms md:text-sm font-normal">
+                No credit card requiered
             </div>
         </div>
     )

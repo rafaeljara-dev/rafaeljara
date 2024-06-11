@@ -39,13 +39,13 @@ export const LandingNavbar = () => {
 
     return (
         <div className="fixed opacity-90 bg-zinc-950 dark:bg-white">
-            <nav className="px-20 p-4 mx-20 bg-transparent flex items-center justify-between fixed top-0 left-0 right-0 z-50">
+            <nav className="lg:px-20 lg:mx-20 p-4 bg-transparent flex items-center justify-between fixed top-0 left-0 right-0 z-50">
                 <div>
-                <Link href="/" className="flex items-center">
-                    <h1 className={cn("text-2x1 font bold", font.className)}>
-                        Rafael Jara
-                    </h1>
-                </Link>
+                    <Link href="/" className="flex items-center">
+                        <h1 className={cn("text-2x1 font bold", font.className)}>
+                            Rafael Jara
+                        </h1>
+                    </Link>
                 </div>
                 {/* Navbar Desktop */}
                 <div className="hidden md:flex items-center gap-x-2">

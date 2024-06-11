@@ -5,9 +5,11 @@ import { LandingContent } from "@/components/landing-content";
 
 const landingPage = () => {
     return (
-        <div className="h-full px-20 mx-20">
+        <div className="h-full lg:px-20 lg:mx-20">
             <LandingNavbar />
-            <LandingHero />
+            <div className="py-10">
+                <LandingHero />
+            </div>
             <LandingContent />
         </div>
     );

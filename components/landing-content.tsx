@@ -79,7 +79,7 @@ export const LandingContent = () => {
                 <h2 className="text-center text-4xl font-extrabold mb-10">
                     Proyectos
                 </h2>
-                <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="sm:p-4 lg:px-0 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {testimonials.map((item) => (
                         <Card key={item.description} className="shadow-lg">
                             <div className="flex items-center justify-center">
@@ -96,17 +96,17 @@ export const LandingContent = () => {
                                 <CardContent className="pt-4 px-0">
                                     <div>
                                         <div className="space-y-1">
-                                            <h4 className="text-sm font-medium leading-none">{item.title}</h4>
+                                            <h4 className="text-sm font-medium leading-none">{item.name}</h4>
                                             <p className="text-sm text-muted-foreground">
                                                 {item.description}
                                             </p>
                                         </div>
-                                        <Separator className="my-4" />
+                                        {/* <Separator className="my-4" />
                                         <div className="flex h-5 items-center space-x-4 text-sm">
                                             <div>Web</div>
                                             <Separator orientation="vertical" />
                                             <div>Git</div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </CardContent>
                             </CardHeader>

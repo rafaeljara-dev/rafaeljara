@@ -61,7 +61,7 @@ export const LandingNavbar = () => {
                             Experiencia
                         </Button>
                     </Link>
-                    <Link href="#projects" legacyBehavior passHref>
+                    {/* <Link href="#projects" legacyBehavior passHref>
                         <Button
                             className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             Proyectos
@@ -72,7 +72,7 @@ export const LandingNavbar = () => {
                             className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             Sobre mi
                         </Button>
-                    </Link>
+                    </Link> */}
                     <Link href="#contact" legacyBehavior passHref>
                         <Button
                             className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">

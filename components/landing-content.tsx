@@ -9,6 +9,8 @@ import {
 
 import Image from "next/image";
 
+import { Separator } from "@/components/ui/separator"
+
 import sait from "@/assets/images/(laptop-images)/sait.png"
 import itsonmeet from "@/assets/images/(laptop-images)/itsonmeet.png"
 import lnm from "@/assets/images/(laptop-images)/liga-norte.png"
@@ -47,14 +49,14 @@ const testimonials = [
 
 export const LandingContent = () => {
     return (
-        <div className="px-10 pb-20">
+        <div className="pb-20">
             <h2 className="text-center text-4xl text-white font-extrabold mb-10">
                 Proyectos
             </h2>
-            <div className="p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                 {testimonials.map((item) => (
                     <Card key={item.description} className="bg-[#192339] border-none text-white">
-                        <div className="flex items-center justify-center m-2">
+                        <div className="flex items-center justify-center">
                             <Image
                                 src={item.image}
                                 width={250}
@@ -63,14 +65,21 @@ export const LandingContent = () => {
                             />
                         </div>
                         <CardHeader>
-                            <CardTitle className="flex items-center gap-x-2">
-                                <div>
-                                    <p className="text-lg">{item.name}</p>
-                                    <p className="text-zinc-400 text-sm">{item.title}</p>
-                                </div>
-                            </CardTitle>
                             <CardContent className="pt-4 px-0">
-                                {item.description}
+                                <div>
+                                    <div className="space-y-1">
+                                        <h4 className="text-sm font-medium leading-none">{item.title}</h4>
+                                        <p className="text-sm text-muted-foreground">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                    <Separator className="my-4" />
+                                    <div className="flex h-5 items-center space-x-4 text-sm">
+                                        <div>Web</div>
+                                        <Separator orientation="vertical" />
+                                        <div>Git</div>
+                                    </div>
+                                </div>
                             </CardContent>
                         </CardHeader>
                     </Card>

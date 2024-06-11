@@ -3,19 +3,17 @@
 import * as React from "react"
 
 import { Montserrat } from "next/font/google"
-import Image from "next/image"
 import Link from "next/link"
 import { useAuth } from "@clerk/nextjs"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
+import { Switch } from "@/components/ui/switch"
+
 import {
     NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
@@ -23,11 +21,12 @@ import {
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
-    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+
+import { Separator } from "@/components/ui/separator"
+import { ModeToggle } from "@/components/ui/mode-toggle"
 
 const font = Montserrat({
     weight: "600",
@@ -39,143 +38,78 @@ export const LandingNavbar = () => {
     const { isSignedIn } = useAuth();
 
     return (
-        <nav className="p-4 bg-transparent flex items-center justify-between">
-            <Link href="/" className="flex items-center">
+        <div className="fixed opacity-90 bg-zinc-950 dark:bg-white">
+            <nav className="px-20 p-4 mx-20 bg-transparent flex items-center justify-between fixed top-0 left-0 right-0 z-50">
                 <div>
-                    {/* <Image
-                        fill
-                        alt="Logo"
-                        src="/logo.jpg"
-                    /> */}
+                <Link href="/" className="flex items-center">
+                    <h1 className={cn("text-2x1 font bold", font.className)}>
+                        Rafael Jara
+                    </h1>
+                </Link>
                 </div>
-                <h1 className={cn("text-2x1 font bold text-white", font.className)}>
-                    Rafael Jara
-                </h1>
-            </Link>
-            {/* Navbar Desktop */}
-            <div className="hidden md:flex items-center gap-x-2">
-                <NavigationMenu>
-                    <NavigationMenuList>
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger>Pre-Proyectos</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
-                                    <li className="row-span-3">
-                                        <Link href="/pre-proyectos" legacyBehavior passHref>
-                                            <NavigationMenuLink href="/pre-proyectos" asChild>
-                                                <a
-                                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                    href="/"
-                                                >
-                                                    {/* <Icons.logo className="h-6 w-6" /> */}
-                                                    <div className="mb-2 mt-4 text-lg font-medium">
-                                                        Conoce los proyectos
-                                                    </div>
-                                                    <p className="text-sm leading-tight text-muted-foreground">
-                                                        Si buscas un proyecto que te interese, te lo encontrarás aquí en mi catalogo.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </Link>
-                                    </li>
-                                    <ListItem href="/pre-proyectos" title="Plataforma de Cursos">
-                                        Pagina para subir cursos para verse online.
-                                    </ListItem>
-                                    <ListItem href="/pre-proyectos" title="Introduction">
-                                        Re-usable components built using Radix UI and Tailwind CSS.
-                                    </ListItem>
-                                    <ListItem href="/pre-proyectos" title="Introduction">
-                                        Re-usable components built using Radix UI and Tailwind CSS.
-                                    </ListItem>
-                                </ul>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                        {/* 
-                        <NavigationMenuItem>
-                            <Link href="/pre-proyectos" legacyBehavior passHref>
-                                <Button variant="secondary" className="rounded-full">
-                                    <NavigationMenuLink>
-                                        Pre-Proyectos
-                                    </NavigationMenuLink>
-                                </Button>
-                            </Link>
-                        </NavigationMenuItem> */}
+                {/* Navbar Desktop */}
+                <div className="hidden md:flex items-center gap-x-2">
+                    <Link href="#home" legacyBehavior passHref>
+                        <Button
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            Inicio
+                        </Button>
+                    </Link>
+                    <Link href="#experience" legacyBehavior passHref>
+                        <Button
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            Experiencia
+                        </Button>
+                    </Link>
+                    <Link href="#projects" legacyBehavior passHref>
+                        <Button
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            Proyectos
+                        </Button>
+                    </Link>
+                    <Link href="#about" legacyBehavior passHref>
+                        <Button
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            Sobre mi
+                        </Button>
+                    </Link>
+                    <Link href="#contact" legacyBehavior passHref>
+                        <Button
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            Contacto
+                        </Button>
+                    </Link>
+                    <ModeToggle />
+                </div>
 
-                    </NavigationMenuList>
-                </NavigationMenu>
-            </div>
-            <div className="hidden md:flex items-center gap-x-2">
-                <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+
+                {/* Navbar Mobile */}
+                <div className="lg:hidden md:hidden flex items-center gap-x-2">
                     <Button variant="outline" className="rounded-full">
-                        Login
+                        <Sheet>
+                            <SheetTrigger>Menú</SheetTrigger>
+                            <SheetContent>
+                                <div className="flex">
+                                    <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+                                        <Button variant="outline" className="rounded-full">
+                                            Login
+                                        </Button>
+                                    </Link>
+                                    <Link href="/sign-up" className="rounded-full">
+                                        <Button>
+                                            Register
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </SheetContent>
+                        </Sheet>
                     </Button>
-                </Link>
-                <Link href="/sign-up" className="rounded-full">
-                    <Button>
-                        Register
-                    </Button>
-                </Link>
-            </div>
-
-            {/* Navbar Mobile */}
-            <div className="lg:hidden md:hidden flex items-center gap-x-2">
-                <Button variant="outline" className="rounded-full">
-                    <Sheet>
-                        <SheetTrigger>Menú</SheetTrigger>
-                        <SheetContent>
-                            <SheetHeader>
-                                {/* <SheetTitle>Are you absolutely sure?</SheetTitle>
-                                <SheetDescription>
-                                    This action cannot be undone. This will permanently delete your account
-                                    and remove your data from our servers.
-                                </SheetDescription> */}
-                            </SheetHeader>
-                            <div className="flex">
-                                <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-                                    <Button variant="outline" className="rounded-full">
-                                        Login
-                                    </Button>
-                                </Link>
-                                <Link href="/sign-up" className="rounded-full">
-                                    <Button>
-                                        Register
-                                    </Button>
-                                </Link>
-                            </div>
-                        </SheetContent>
-                    </Sheet>
-                </Button>
-            </div>
-
-        </nav>
+                </div>
+            </nav>
+            <Separator />
+        </div>
     )
 
 }
-
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-    return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
-                    <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
-                </a>
-            </NavigationMenuLink>
-        </li>
-    )
-})
-ListItem.displayName = "ListItem"
 
 export default LandingNavbar;

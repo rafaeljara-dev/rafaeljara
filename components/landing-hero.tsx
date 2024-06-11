@@ -5,28 +5,17 @@ import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
 import { Button } from "@/components/ui/button";
 
+import TextAnimation from "./text-animation";
+
 export const LandingHero = () => {
     const { isSignedIn } = useAuth();
 
     return (
-        <div className="text-white font-bold py-36 text-center space-y-5">
-            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl space-y-5 font-extrabold">
-                <h2>Bienvenido</h2>
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                    <TypewriterComponent
-                        options={{
-                            strings: [
-                                "Desarrollo Web.",
-                                "Software a la Medida.",
-                                "Aplicaciones",
-                            ],
-                            autoStart: true,
-                            loop: true,
-                        }}
-                    />
-                </div>
+        <div className="font-bold py-24 space-y-5">
+            <div className="text-3xl sm:text-3xl md:text-3xl lg:text-6xl space-y-5 ml-0">
+                <TextAnimation />
             </div>
-            <div className="text-sm md:text-xl font-light text-zinc-400">
+            <div className="text-sm md:text-xl font-light">
                 Rafael Jara
             </div>
             <div>
@@ -36,9 +25,6 @@ export const LandingHero = () => {
                     </Button>
                 </Link>
             </div>
-            {/* <div className="text-zinc-400 text-ms md:text-sm font-normal">
-                No credit card requiered
-            </div> */}
         </div>
     )
 }

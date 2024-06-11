@@ -8,9 +8,9 @@ export const LandingHero = () => {
 
     return (
         <>
-            <div className="font-bold py-24 space-y-5 md:p-4 sm:p-4 lg:p-0">
+            <div className="font-bold">
                 <div className="flex justify-start">
-                    <div className="text-3xl sm:text-1xl md:text-1xl lg:text-6xl space-y-5">
+                    <div className="text-3xl sm:text-1xl md:text-1xl lg:text-6xl">
                         <TextAnimation />
                     </div>
                 </div>

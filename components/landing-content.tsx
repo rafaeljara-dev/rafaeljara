@@ -59,7 +59,7 @@ export const LandingContent = () => {
     };
     return (
         <>
-            <div className="flex justify-center pt-5">
+            <div className="flex justify-center pt-10 pb-20">
                 <button
                     onClick={scrollToSecondDiv}
                     className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-gray-200 flex items-center justify-center shadow-lg hover:bg-gray-300 focus:outline-none"

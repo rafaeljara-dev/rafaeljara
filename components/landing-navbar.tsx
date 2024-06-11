@@ -85,6 +85,7 @@ export const LandingNavbar = () => {
 
                 {/* Navbar Mobile */}
                 <div className="lg:hidden md:hidden flex items-center gap-x-2">
+                    <ModeToggle />
                     <Button variant="outline" className="rounded-full">
                         <Sheet>
                             <SheetTrigger>Menú</SheetTrigger>
@@ -104,6 +105,7 @@ export const LandingNavbar = () => {
                             </SheetContent>
                         </Sheet>
                     </Button>
+
                 </div>
             </nav>
             <Separator />

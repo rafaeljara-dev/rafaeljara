@@ -7,7 +7,7 @@ const landingPage = () => {
     return (
         <div className="h-full lg:px-20 lg:mx-20">
             <LandingNavbar />
-            <div className="py-10">
+            <div className="lg:py-20 md:py-10">
                 <LandingHero />
             </div>
             <LandingContent />

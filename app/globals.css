@@ -89,3 +89,29 @@ body,
 .span-text-animation {
   color: #fde68a;
 }
+
+
+@media (max-width: 640px) {
+  .sm\:p-4 {
+    padding: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:p-0 {
+    padding: 0rem;
+  }
+}
+

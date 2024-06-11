@@ -18,14 +18,27 @@ export const TextAnimation = () => {
   }
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={textVariants}
-      className="mb-4 pt-10"
-    >
-      <motion.span>Materializo su visión<br />en un sitio web profesional.</motion.span>
-    </motion.div>
+    <>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        className="mb-4 pt-10 hidden md:flex"
+      >
+        <motion.span>Materializo su visión<br />en un sitio web profesional.</motion.span>
+      </motion.div>
+
+      {/* Mobile Version*/}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        className="mb-4 pt-10 lg:hidden md:hidden flex"
+      >
+        <motion.span>Materializo su visión en un sitio web profesional.</motion.span>
+      </motion.div>
+    </>
+
   )
 }
 

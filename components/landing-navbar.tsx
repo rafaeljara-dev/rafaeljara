@@ -51,31 +51,31 @@ export const LandingNavbar = () => {
                 <div className="hidden md:flex items-center gap-x-2">
                     <Link href="#home" legacyBehavior passHref>
                         <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             Inicio
                         </Button>
                     </Link>
                     <Link href="#experience" legacyBehavior passHref>
                         <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             Experiencia
                         </Button>
                     </Link>
                     <Link href="#projects" legacyBehavior passHref>
                         <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             Proyectos
                         </Button>
                     </Link>
                     <Link href="#about" legacyBehavior passHref>
                         <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             Sobre mi
                         </Button>
                     </Link>
                     <Link href="#contact" legacyBehavior passHref>
                         <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             Contacto
                         </Button>
                     </Link>

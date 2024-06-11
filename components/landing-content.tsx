@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/separator"
 
 import sait from "@/assets/images/(laptop-images)/sait.png"
 import itsonmeet from "@/assets/images/(laptop-images)/itsonmeet.png"
-import lnm from "@/assets/images/(laptop-images)/liga-norte.png"
+import lnm from "@/assets/images/(laptop-images)/liganorte.png"
 import algodoneros from "@/assets/images/(laptop-images)/algodoneros.png"
 
 const testimonials = [
@@ -55,15 +55,17 @@ export const LandingContent = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                 {testimonials.map((item) => (
-                    <Card key={item.description} className="bg-[#192339] border-none text-white">
+                    <Card key={item.description} className="bg-[#192339] text-white">
                         <div className="flex items-center justify-center">
-                            <Image
-                                src={item.image}
-                                width={250}
-                                height={100}
-                                alt="Picture of the author"
-                            />
+                            <div className="rounded" style={{ width: '100%', height: '100%' }}>
+                                <Image
+                                    src={item.image}
+                                    className="rounded"
+                                    alt="Picture of the author"
+                                />
+                            </div>
                         </div>
+
                         <CardHeader>
                             <CardContent className="pt-4 px-0">
                                 <div>

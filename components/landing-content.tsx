@@ -76,8 +76,8 @@ export const LandingContent = () => {
                 </button>
             </div>
             <div ref={secondDivRef} className="pb-20 pt-10" style={{ scrollBehavior: 'smooth' }}>
-                <h2 className="text-center text-4xl font-extrabold mb-10">
-                    Esta sección estará pronto disponible. Espera actualizaciones...
+                <h2 className="text-center text-2xl font-extrabold mb-10">
+                    Esta sección estará pronto disponible, <br/> Vuelve pronto para más actualizaciones...
                 </h2>
 
                 {/* <div className="sm:p-4 lg:px-0 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">

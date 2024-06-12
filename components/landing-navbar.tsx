@@ -28,16 +28,8 @@ const font = Montserrat({
 export const LandingNavbar = () => {
     const { isSignedIn } = useAuth();
 
-    const copyToClipboard = () => {
-        navigator.clipboard.writeText("rafaeljara73@gmail.com").then(() => {
-            alert("Correo copiado al portapapeles");
-        }, (err) => {
-            console.error("Error al copiar al portapapeles: ", err);
-        });
-    };
-
     return (
-        <div className="fixed opacity-90 bg-zinc-950 dark:bg-white">
+        <div className="fixed opacity-90 bg-white">
             <nav className="lg:px-20 lg:mx-20 p-4 bg-transparent flex items-center justify-between fixed top-0 left-0 right-0 z-50">
                 <div>
                     <Link href="/" className="flex items-center">

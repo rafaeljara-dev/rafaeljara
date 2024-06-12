@@ -14,6 +14,7 @@ import { FaGithub, FaInstagram, FaTiktok } from "react-icons/fa";
 import { Button } from "@/components/ui/button"
 
 export const ContactModal = () => {
+
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText("rafaeljara73@gmail.com").then(() => {
 				alert("Correo copiado al portapapeles");

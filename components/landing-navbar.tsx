@@ -9,33 +9,32 @@ import { useAuth } from "@clerk/nextjs"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-import { Switch } from "@/components/ui/switch"
-
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
-
 import {
     Sheet,
     SheetContent,
-    SheetHeader,
     SheetTrigger,
 } from "@/components/ui/sheet"
 
 import { Separator } from "@/components/ui/separator"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 
+import { ContactModal } from "@/components/modals/contact-modal"
+
 const font = Montserrat({
     weight: "600",
     subsets: ["latin"]
 });
 
-
 export const LandingNavbar = () => {
     const { isSignedIn } = useAuth();
+
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText("rafaeljara73@gmail.com").then(() => {
+            alert("Correo copiado al portapapeles");
+        }, (err) => {
+            console.error("Error al copiar al portapapeles: ", err);
+        });
+    };
 
     return (
         <div className="fixed opacity-90 bg-zinc-950 dark:bg-white">
@@ -61,27 +60,9 @@ export const LandingNavbar = () => {
                             Experiencia
                         </Button>
                     </Link>
-                    {/* <Link href="#projects" legacyBehavior passHref>
-                        <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            Proyectos
-                        </Button>
-                    </Link>
-                    <Link href="#about" legacyBehavior passHref>
-                        <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            Sobre mi
-                        </Button>
-                    </Link> */}
-                    <Link href="#contact" legacyBehavior passHref>
-                        <Button
-                            className="block space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            Contacto
-                        </Button>
-                    </Link>
+                    <ContactModal />
                     <ModeToggle />
                 </div>
-
 
                 {/* Navbar Mobile */}
                 <div className="lg:hidden md:hidden flex items-center gap-x-2">
@@ -111,7 +92,6 @@ export const LandingNavbar = () => {
             <Separator />
         </div>
     )
-
 }
 
 export default LandingNavbar;

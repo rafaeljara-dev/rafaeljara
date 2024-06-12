@@ -75,11 +75,12 @@ export const LandingContent = () => {
                     </svg>
                 </button>
             </div>
-            <div ref={secondDivRef} className="pb-20 pt-10"style={{ scrollBehavior: 'smooth' }}>
+            <div ref={secondDivRef} className="pb-20 pt-10" style={{ scrollBehavior: 'smooth' }}>
                 <h2 className="text-center text-4xl font-extrabold mb-10">
-                    Proyectos
+                    This section is coming soon. Stay tuned for updates...
                 </h2>
-                <div className="sm:p-4 lg:px-0 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                {/* <div className="sm:p-4 lg:px-0 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {testimonials.map((item) => (
                         <Card key={item.description} className="shadow-lg">
                             <div className="flex items-center justify-center">
@@ -101,18 +102,13 @@ export const LandingContent = () => {
                                                 {item.description}
                                             </p>
                                         </div>
-                                        {/* <Separator className="my-4" />
-                                        <div className="flex h-5 items-center space-x-4 text-sm">
-                                            <div>Web</div>
-                                            <Separator orientation="vertical" />
-                                            <div>Git</div>
-                                        </div> */}
                                     </div>
                                 </CardContent>
                             </CardHeader>
                         </Card>
                     ))}
-                </div>
+                </div> */}
+
             </div>
         </>
     );

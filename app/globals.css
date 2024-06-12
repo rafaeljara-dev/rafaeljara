@@ -119,6 +119,11 @@ body,
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
   }
+
+  .md\:text-1xl {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -129,5 +134,10 @@ body,
   .lg\:py-20 {
     padding-top: 10rem;
     padding-bottom: 10rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }

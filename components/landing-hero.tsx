@@ -10,7 +10,7 @@ export const LandingHero = () => {
         <>
             <div className="font-bold">
                 <div className="flex justify-start">
-                    <div className="text-3xl sm:text-1xl md:text-1xl lg:text-6xl">
+                    <div className="text-3xl lg:text-6xl">
                         <TextAnimation />
                     </div>
                 </div>
